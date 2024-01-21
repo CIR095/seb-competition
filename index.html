@@ -1,11 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video and Images</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    width: 100%;
+    max-width: 800px; /* You can adjust the max width */
+    margin: auto;
+    text-align: center;
+  }
+  video, img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px; /* Space between elements */
+  }
+</style>
 </head>
 <body>
-    ciao
+<div class="container">
+  <video id="videoPlayer" controls>
+    <source src="0001-0745.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <!--img src="image1.jpg" alt="Image 1">
+  <img src="image2.jpg" alt="Image 2">
+  <img src="image3.jpg" alt="Image 3"-->
+</div>
+
+<script>
+  // Get the video
+  var video = document.getElementById("videoPlayer");
+
+  // Function to toggle fullscreen
+  function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      video.requestFullscreen().catch(err => {
+        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+      });
+    } else {
+      document.exitFullscreen();
+    }
+  }
+
+  // Event listener for the video to go fullscreen on click
+  video.addEventListener('click', toggleFullScreen);
+</script>
 </body>
 </html>
