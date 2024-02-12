@@ -1,56 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Video and Images</title>
-<style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  .container {
-    width: 100%;
-    max-width: 800px; /* You can adjust the max width */
-    margin: auto;
-    text-align: center;
-  }
-  video, img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px; /* Space between elements */
-  }
-</style>
-</head>
-<body>
-    <p>titolo</p>
-<div class="container">
-  <video id="videoPlayer" controls>
-    <source src="0001-0780.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-  <img src="PAG 01-pdf.jpg" alt="Image 1">
-  <img src="PAG 02-pdf.jpg" alt="Image 2">
-  <img src="PAG 03.jpg" alt="Image 3">
-</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>THE WING</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>THE WING</h1>
 
-<script>
-  // Get the video
-  var video = document.getElementById("videoPlayer");
+            <video id="videoPlayer" controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-  // Function to toggle fullscreen
-  function toggleFullScreen() {
-    if (!document.fullscreenElement) {
-      video.requestFullscreen().catch(err => {
-        alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-      });
-    } else {
-      document.exitFullscreen();
-    }
-  }
+            <P class="video-txt">video with audio !!</P>
 
-  // Event listener for the video to go fullscreen on click
-  video.addEventListener('click', toggleFullScreen);
-</script>
-</body>
+            <img src="PAG 01.jpg" alt="Image 1">
+            <img src="PAG 02.jpg" alt="Image 2">
+            <img src="PAG 03.jpg" alt="Image 3">
+            
+            <div class="div-links">
+                <div class="div-link">
+                    <a href="https://www.youtube.com/watch?v=eEKlRUvk9zc">Sound of a Glass Armonica</a>
+                    <img src="link01.PNG" alt="Link 1" class="images">
+                </div>
+                <div class="div-link">
+                    <a href="https://www.youtube.com/watch?v=Q9yZhkz94yE&t=3s">Construction of Glass Harmonica</a>
+                    <img src="link02.PNG" alt="Link 2" class="images">
+                </div>
+                <div class="div-link">
+                    <a href="https://www.youtube.com/watch?v=pygnOhyIOws">Verrophon</a>
+                    <img src="link03.PNG" alt="Link 3" class="images">
+                </div>
+                <div class="div-link">
+                    <a href="https://www.youtube.com/watch?v=n86pF-wQKrw&t=15s">Zadar Sea Organ</a>
+                    <img src="link04.PNG" alt="Link 4" class="images">
+                </div>
+            </div>
+
+            <div>
+                <p class="canvas-txt">Enjoy our 3D model by interacting with the mouse !</p>
+                <canvas id="three-canvas"></canvas>
+                <button class="button" id="myButtonRotation">Activate rotation</button>
+                <button class="button" id="myButtonExplosion">Explode it</button>    
+            </div>
+        </div>
+
+        <script src="bundle.js"></script>
+    </body>
 </html>
